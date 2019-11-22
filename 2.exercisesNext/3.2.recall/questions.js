@@ -1,61 +1,75 @@
 let selectElementsStartingWithA = (array) => {
-    return 'Write your method here';
+    return array.filter(word => word[0] === "a");
 }
 
 let selectElementsStartingWithVowel = (array) => {
-    return 'Write your method here';
+    return array.filter(word => word[0].match(/[aeiouy]/i));
 }
 
 let removeNullElements = (array) => {
-    return 'Write your method here';
+    return array.filter(word => word !== null);
 }
 
 let removeNullAndFalseElements = (array) => {
-    return 'Write your method here';
+    return array.filter(word => word !== null && word !== false);
 }
 
 let reverseWordsInArray = (array) => {
-    return 'Write your method here';
-}
+    const reverseArr = array.map(element => element.split("").reverse().join(""));
+      return reverseArr;
+    };
 
 let everyPossiblePair = (array) => {
-    return 'Write your method here';
-}
+    array.sort();
+    let everyPossible = [];
+    for (i = 0; i < array.length - 1; i++) {
+      for (j = i + 1; j < array.length; j++) {
+        everyPossible.push([array[i], array[j]]);
+      }
+    }
+    return everyPossible;
+  };
 
 let allElementsExceptFirstThree = (array) => {
-    return 'Write your method here';
+    return array.slice(3);
 }
 
 let addElementToBeginning = (array, element) => {
-    return 'Write your method here';
+    array.unshift(element);
+    return array;
 }
 
 let sortByLastLetter = (array) => {
-    return 'Write your method here';
+    return array.sort((a, b) => a.charCodeAt(a.length - 1) - b.charCodeAt(b.length - 1));
 }
 
 let getFirstHalf = (string) => {
-    return 'Write your method here';
+    return string.substring(0, Math.round(string.length / 2));
+
 }
 
 let makeNegative = (number) => {
-    return 'Write your method here';
+    return -Math.abs(number);
 }
 
 let numberOfPalindromes = (array) => {
-    return 'Write your method here';
+    const palindromes = array.filter(element => element ===element.split("").reverse().join(""));
+    return palindromes.length;
+    
 }
 
 let shortestWord = (array) => {
-    return 'Write your method here';
+    const shortestWord = array.sort((a, b) => a.length - b.length);
+    return shortestWord[0];
 }
 
 let longestWord = (array) => {
-    return 'Write your method here';
+    const longestWord = array.sort((a, b) => a.length - b.length);
+    return longestWord[longestWord.length - 1];
 }
 
 let sumNumbers = (array) => {
-    return 'Write your method here';
+    return array.reduce((acc,curr) => (acc += curr));
 }
 
 let repeatElements = (array) => {
