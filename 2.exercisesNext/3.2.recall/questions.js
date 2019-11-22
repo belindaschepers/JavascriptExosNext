@@ -17,7 +17,7 @@ let removeNullAndFalseElements = (array) => {
 let reverseWordsInArray = (array) => {
     const reverseArr = array.map(element => element.split("").reverse().join(""));
       return reverseArr;
-    };
+    }
 
 let everyPossiblePair = (array) => {
     array.sort();
@@ -28,7 +28,7 @@ let everyPossiblePair = (array) => {
       }
     }
     return everyPossible;
-  };
+  }
 
 let allElementsExceptFirstThree = (array) => {
     return array.slice(3);
@@ -73,23 +73,45 @@ let sumNumbers = (array) => {
 }
 
 let repeatElements = (array) => {
-    return 'Write your method here';
+    const repeatElem = array.concat(array);
+    return repeatElem;
 }
 
 let stringToNumber = (string) => {
-    return 'Write your method here';
+    return parseInt(string);
 }
 
 let calculateAverage = (array) => {
-    return 'Write your method here';
+    const sum = array.reduce((acc, curr) => (acc += curr));
+    const average = sum / array.length;
+    return average;
 }
 
 let getElementsUntilGreaterThanFive = (array) => {
-    return 'Write your method here';
+    let myArray = [];
+    while (true) {
+    let shifted = array.shift();
+    if (shifted >= 6) {
+      return myArray;
+    }
+    myArray.push(shifted);
+  }
 }
 
 let convertArrayToObject = (array) => {
-    return 'Write your method here';
+    let key = [];
+    let value = [];
+    let result = {};
+
+    for (let index = 0; index < array.length; index += 2) {
+      key.push(array[index]);
+    }
+    for (let index = 1; index < array.length; index += 2) {
+      value.push(array[index]);
+    }
+
+    key.forEach((key, i) => (result[key] = value[i]));
+    return result;
 }
 
 let getAllLetters = (array) => {
