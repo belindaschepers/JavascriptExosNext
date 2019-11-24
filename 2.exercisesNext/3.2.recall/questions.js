@@ -115,15 +115,26 @@ let convertArrayToObject = (array) => {
 }
 
 let getAllLetters = (array) => {
-    return 'Write your method here';
+    let elem = array.join("");
+    let elem2 = elem.split("");
+    let getLetters = [...new Set(elem2.sort())];
+    return getLetters;
 }
 
 let swapKeysAndValues = (object) => {
-    return 'Write your method here';
+    let values = Object.keys(object);
+    let keys = Object.values(object);
+    let result = {};
+    keys.forEach((key, i) => (result[key] = values[i]));
+    return result;
 }
 
 let sumKeysAndValues = (object) => {
-    return 'Write your method here';
+    let values = Object.values(object);
+    let keys = Object.keys(object).map(Number);
+    let sumVal = values.reduce((acc,val) => (acc += val));
+    let sumKeys = keys.reduce((acc, key) => (acc += key));
+    return sumVal + sumKeys;
 }
 
 let removeCapitals = (string) => {
@@ -139,7 +150,10 @@ let formatDateNicely = (date) => {
 }
 
 let getDomainName = (string) => {
-    return 'Write your method here';
+    let domain = string.replace(/.*@/, "");
+    let getDomain = domain.replace(".com","")
+
+    return getDomain;
 }
 
 let titleize = (string) => {
