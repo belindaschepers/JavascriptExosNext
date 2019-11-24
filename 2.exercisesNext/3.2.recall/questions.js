@@ -131,11 +131,11 @@ let removeCapitals = (string) => {
 }
 
 let roundUp = (number) => {
-    return 'Write your method here';
+    return Math.ceil(number);
 }
 
 let formatDateNicely = (date) => {
-    return 'Write your method here';
+    return date.toLocaleDateString("fr-FR");
 }
 
 let getDomainName = (string) => {
@@ -151,11 +151,18 @@ let checkForSpecialCharacters = (string) => {
 }
 
 let squareRoot = (number) => {
-    return 'Write your method here';
+    return Math.sqrt(number);
 }
 
 let factorial = (number) => {
-    return 'Write your method here';
+    const fact = n => {
+        if (n === 0) {
+          return 1;
+        }
+        return n * factorial(n - 1);
+      };
+      return fact(number);
+    
 }
 
 let findAnagrams = (string) => {
@@ -167,5 +174,6 @@ let convertToCelsius = (number) => {
 }
 
 let letterPosition = (array) => {
-    return 'Write your method here';
+    const letterPos = array.map(el => el.toLowerCase().charCodeAt() - 96);
+    return letterPos;
 }
